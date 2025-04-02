@@ -248,13 +248,13 @@ section {
 }
 
 .viz-header h2 {
-  font-size: 2.25rem;
+  font-size: 2rem;
   font-weight: bold;
   margin-bottom: 0.5rem;
 }
 
 .viz-header h3 {
-  font-size: 1.25rem;
+  font-size: 0.75rem;
   color: #e53e3e;
 }
 
@@ -276,7 +276,7 @@ section {
 .viz-explanation {
   margin-top: 1rem;
   background-color: #1a202c;
-  padding: 1.5rem;
+  padding: 1rem;
   border-radius: 0.5rem;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
@@ -288,7 +288,7 @@ section {
 }
 
 .viz-explanation h4 {
-  font-size: 1.25rem;
+  font-size: 1rem;
   font-weight: 600;
   margin-bottom: 1rem;
   color: #e53e3e;
