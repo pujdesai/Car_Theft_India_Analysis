@@ -281,6 +281,10 @@ section {
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
+.viz-explanation p, li{
+  font-size: 0.75rem;
+}
+
 .viz-explanation p {
   color: #cbd5e0;
   margin-bottom: 1.5rem;
