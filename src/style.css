@@ -363,7 +363,7 @@ section {
     margin-bottom: 0.25rem;
   }
   .viz-header h3 {
-    font-size: 0.5rem;
+    font-size: 0.85rem;
     color: #e53e3e;
   }
   .viz-content {
@@ -376,7 +376,7 @@ section {
     border-bottom: 1px solid #4a5568;
   }
   .viz-explanation p, li{
-    font-size: 0.5rem;
+    font-size: 0.65rem;
   }
   .viz-explanation h4 {
     font-size: 0.75rem;
