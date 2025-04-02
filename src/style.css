@@ -254,7 +254,7 @@ section {
 }
 
 .viz-header h3 {
-  font-size: 0.75rem;
+  font-size: 1.25rem;
   color: #e53e3e;
 }
 
@@ -264,7 +264,7 @@ section {
   align-items: center;
   max-width: 1400px;
   margin: 0;
-  padding-bottom: 1.5rem;
+  padding-bottom: 1.25rem;
   border-bottom: 1px solid #4a5568;
 }
 
@@ -276,13 +276,9 @@ section {
 .viz-explanation {
   margin-top: 1rem;
   background-color: #1a202c;
-  padding: 1rem;
+  padding: 1.25rem;
   border-radius: 0.5rem;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-}
-
-.viz-explanation p, li{
-  font-size: 0.75rem;
 }
 
 .viz-explanation p {
@@ -291,8 +287,12 @@ section {
   line-height: 1.6;
 }
 
+.viz-explanation p, li {
+  font-size: 0.85rem;
+}
+
 .viz-explanation h4 {
-  font-size: 1rem;
+  font-size: 1.25rem;
   font-weight: 600;
   margin-bottom: 1rem;
   color: #e53e3e;
