@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    #vis.vega-embed {
+      width: 100%;
+      display: flex;
+    }
+
+    #vis.vega-embed details,
+    #vis.vega-embed details summary {
+      position: relative;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.8.0"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"name": "data-78c67d498ccffa5ebb9c6e023809ce87"}, "mark": {"type": "bar"}, "encoding": {"color": {"field": "Status", "legend": null, "scale": {"domain": ["Yes", "No"], "range": ["green", "red"]}, "type": "nominal"}, "tooltip": [{"field": "Status", "title": "Recovery Aid Present", "type": "nominal"}, {"field": "Percent", "title": "Percent Recovered", "type": "quantitative"}], "x": {"axis": {"labelAngle": 0}, "field": "Status", "sort": ["Yes", "No"], "title": "Recovery Aid Present (in Recovered Cars)", "type": "nominal"}, "y": {"field": "Percent", "scale": {"domain": [0, 100]}, "title": "Percentage of Recovered Cars", "type": "quantitative"}}, "height": 300, "params": [{"name": "SelectedAid", "bind": {"input": "select", "options": ["Suspect Identification", "GPS Installed", "CCTV Availability"], "name": "Select Recovery Aid: "}, "value": "Suspect Identification"}], "title": "What Percentage of Recovered Cars Had the Selected Recovery Aid?", "transform": [{"filter": "(datum.DisplayFactor === SelectedAid)"}], "width": 750, "$schema": "https://vega.github.io/schema/vega-lite/v5.8.0.json", "datasets": {"data-78c67d498ccffa5ebb9c6e023809ce87": [{"DisplayFactor": "CCTV Availability", "Status": "No", "Count": 1530, "Percent": 50.31}, {"DisplayFactor": "CCTV Availability", "Status": "Yes", "Count": 1511, "Percent": 49.69}, {"DisplayFactor": "GPS Installed", "Status": "No", "Count": 1818, "Percent": 59.78}, {"DisplayFactor": "GPS Installed", "Status": "Yes", "Count": 1223, "Percent": 40.22}, {"DisplayFactor": "Suspect Identification", "Status": "No", "Count": 2425, "Percent": 79.74}, {"DisplayFactor": "Suspect Identification", "Status": "Yes", "Count": 616, "Percent": 20.26}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>
