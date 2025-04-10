@@ -25,7 +25,7 @@ const Viz2Section = forwardRef((_props, ref) => {
             <div className="viz-content">
               <div
                 style={{
-                  width: "850px",
+                  width: "825px",
                   height: "450px",
                   overflow: "hidden",
                   position: "relative",
