@@ -287,7 +287,8 @@ section {
   line-height: 1.6;
 }
 
-.viz-explanation p, li {
+.viz-explanation p,
+li {
   font-size: 1rem;
 }
 
@@ -357,7 +358,65 @@ section {
 }
 
 @media screen and (max-height: 925px) {
+  .viz-header h2 {
+    font-size: 1.75rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+
+  .viz-header h3 {
+    font-size: 1rem;
+    color: #e53e3e;
+  }
+
   .viz-content {
-    filter: scale(0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid #4a5568;
+  }
+
+  .viz-content img {
+    height: 100%;
+    width: 100%;
+  }
+
+  .viz-explanation {
+    margin-top: 1rem;
+    background-color: #1a202c;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  }
+
+  .viz-explanation p {
+    color: #cbd5e0;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+  }
+
+  .viz-explanation p,
+  li {
+    font-size: 0.85rem;
+  }
+
+  .viz-explanation h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #e53e3e;
+  }
+
+  .viz-explanation ul {
+    list-style: disc;
+    padding-left: 1.5rem;
+    color: #cbd5e0;
+  }
+
+  .viz-explanation li {
+    margin-bottom: 0.25rem;
   }
 }
