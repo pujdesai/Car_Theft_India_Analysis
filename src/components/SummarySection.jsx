@@ -18,16 +18,14 @@ const SummarySection = forwardRef((_props, ref) => {
             <h2>Summary</h2>
             <div className="prose-box">
               <p>
-                Our analysis revealed that car thefts are relatively evenly
-                spread across brands, with states like Gujarat, Maharashtra, and
-                Rajasthan experiencing the highest volumes. Recovery rates
-                remained low and consistent across states and brands, suggesting
-                broader challenges beyond brand or region. While recovery aids
-                like CCTV were more common among recovered vehicles, most
-                recoveries still occurred without any recorded aid, pointing to
-                other possible influences. Seasonal patterns in theft activity
-                were also observed, with spikes in late spring and early fall,
-                and a dip during the summer.
+                Our analysis showed that car thefts were fairly evenly spread
+                across brands and states like Gujarat, Maharashtra, and
+                Rajasthan saw the highest theft volumes. Recovery rates stayed
+                low across states and brands, even when aids like CCTV were
+                present, suggesting other factors at play. Theft activity spiked
+                in late spring and early fall, dipped in summer, and peaked at
+                night for sedans and pickups, while mornings and convertibles
+                saw fewer incidents.
               </p>
               <p>
                 With detailed features like theft timing, GPS installation, CCTV
@@ -67,8 +65,8 @@ const SummarySection = forwardRef((_props, ref) => {
                       </svg>
                     </span>
                     <span>
-                      Visual tools like line charts and Sankey diagrams help
-                      simplify large datasets and make patterns more obvious
+                      Visual tools like line charts and heatmaps help simplify
+                      large datasets and make patterns more obvious
                     </span>
                   </li>
                   <li>
@@ -88,9 +86,9 @@ const SummarySection = forwardRef((_props, ref) => {
                       </svg>
                     </span>
                     <span>
-                      Interactivity (like hover info and dropdown filters) makes
-                      it easier to explore specific questions without
-                      overwhelming the viewer
+                      Interactivity (like hover info and radio buttons) makes it
+                      easier to explore specific questions without overwhelming
+                      the viewer
                     </span>
                   </li>
                   <li>

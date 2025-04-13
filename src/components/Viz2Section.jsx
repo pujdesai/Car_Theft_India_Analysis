@@ -17,10 +17,10 @@ const Viz2Section = forwardRef((_props, ref) => {
             <div className="viz-header">
               <h2>Visualization 2</h2>
               <h3>
-                Interactive Sankey Diagram Illustrating the Flow of Stolen{" "}
+                Interactive Stacked Bar Chart Illustrating the Distribution of{" "}
                 <br></br>
-                Vehicles Across Major Brands and Their Subsequent Recovery
-                Outcomes
+                Vehicle Thefts Across Major Car Brands and Their Subsequent
+                Recovery Outcomes
               </h3>
             </div>
 
@@ -28,7 +28,7 @@ const Viz2Section = forwardRef((_props, ref) => {
               <div
                 style={{
                   width: "800px",
-                  height: "400px",
+                  height: "425px",
                   overflow: "hidden",
                   position: "relative",
                 }}
@@ -45,25 +45,27 @@ const Viz2Section = forwardRef((_props, ref) => {
 
               <div className="viz-explanation">
                 <p>
-                  We designed an interactive Sankey diagram to show how 10,000
-                  stolen cars flowed through major brands and their recovery
-                  status. Line thickness represents volume, and hovering reveals
-                  exact numbers for easy exploration. Red and green colors
-                  highlight recovery outcomes, while the left-to-right layout
-                  makes it easy to compare patterns across brands.
+                  We created an interactive stacked bar chart to visualize the
+                  distribution of car thefts and recovery rates across major
+                  automobile brands. Each bar represents the total number of
+                  stolen vehicles per brand, broken down into recovered (green)
+                  and not recovered (red) segments. Hovering over a segment
+                  reveals the exact count and percentage, allowing users to
+                  explore detailed recovery statistics brand by brand.
                 </p>
 
                 <h4>Key Insights:</h4>
                 <ul>
                   <li>
-                    Over two-thirds of stolen vehicles were not recovered,
-                    highlighting a significant gap in vehicle recovery efforts
-                    across all brands
+                    Across all brands, more than two-thirds of stolen vehicles
+                    were not recovered, underscoring a widespread gap in
+                    effective vehicle recovery efforts
                   </li>
                   <li>
-                    Recovery numbers are similar across brands, with each
-                    showing a majority of unrecovered vehicles, suggesting this
-                    is a broader issue rather than brand-specific
+                    Recovery percentages are relatively consistent, ranging from
+                    ~28% to ~33% across brands, reinforcing the idea that low
+                    recovery rates are an industry-wide issue rather than a
+                    problem specific to one manufacturer
                   </li>
                   <li>
                     All brands experienced similar theft volumes, suggesting

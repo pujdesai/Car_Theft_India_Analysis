@@ -17,8 +17,8 @@ const Viz3Section = forwardRef((_props, ref) => {
             <div className="viz-header">
               <h2>Visualization 3</h2>
               <h3>
-                Interactive Barchart with Selection Dropdown Evaluating the{" "}
-                <br></br>Role of Recovery Aids in Successful Car Recoveries
+                Interactive Barchart with Radio Buttons Evaluating the <br></br>
+                Role of Recovery Aids in Successful Car Recoveries
               </h3>
             </div>
 
@@ -55,14 +55,14 @@ const Viz3Section = forwardRef((_props, ref) => {
                 <p>
                   We designed this visualization to explore how different
                   recovery aids might influence whether a stolen car gets
-                  recovered. The green and red bars show the percentage of
-                  recovered cars that did or didn’t have the selected aid,
-                  giving a quick visual comparison. To make it interactive, we
-                  added a dropdown menu so users can easily switch between aids
-                  like GPS Installed, Suspect Identification, and CCTV
-                  Availability. We also included hover functionality so when you
-                  move your mouse over a bar, it shows the exact percentage,
-                  giving more precise insight.
+                  recovered. The bars show the percentage of recovered cars that
+                  did or didn’t have the selected aid, giving a quick visual
+                  comparison. To make it interactive, we added radio buttons so
+                  users can easily switch between aids like GPS Installed,
+                  Suspect Identification, and CCTV Availability. We also
+                  included hover functionality so when you move your mouse over
+                  a bar, it shows the exact percentage, giving more precise
+                  insight.
                 </p>
 
                 <h4>Key Insights:</h4>

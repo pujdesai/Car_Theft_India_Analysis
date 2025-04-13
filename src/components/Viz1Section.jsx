@@ -73,12 +73,15 @@ const Viz1Section = forwardRef((_props, ref) => {
 
               <div className="viz-explanation">
                 <p>
-                  We designed this interactive choropleth map to show car theft
-                  volumes and recovery rates across Indian states. Darker blue
-                  shades indicate higher thefts, while hovering reveals exact
-                  values for each state. Missing data is shown in gray with a
-                  labeled legend for clarity. The design makes it easy to spot
-                  regional patterns while keeping the map clean and informative.
+                  We designed this interactive choropleth map to display car
+                  theft volumes and recovery rates across Indian states. Darker
+                  blue shades represent higher theft counts, while gray
+                  indicates missing data, which is noted in the legend. Hovering
+                  over each state reveals its name, number of thefts, and
+                  recovery rate. To provide additional geographic context, we
+                  also marked major cities across the country. The overall
+                  design helps highlight regional trends while remaining clean
+                  and easy to interpret.
                 </p>
 
                 <h4>Key Insights:</h4>

@@ -17,8 +17,8 @@ const Viz4Section = forwardRef((_props, ref) => {
             <div className="viz-header">
               <h2>Visualization 4</h2>
               <h3>
-                Static Linechart Analyzing Daily <br></br>Theft Trends with a
-                30-Day Rolling Average to Reveal Patterns
+                Interactive Linechart Analyzing Daily <br></br>Theft Trends with
+                a 30-Day Rolling Average to Reveal Patterns
               </h3>
             </div>
 
@@ -51,7 +51,8 @@ const Viz4Section = forwardRef((_props, ref) => {
                   short-term spikes and long-term patterns. The colors make it
                   easy to focus on the trendline without losing sight of the raw
                   data, and the full-year timeline helps spot seasonal changes
-                  in theft activity.
+                  in theft activity. You are able to zoom in and out of specific
+                  date ranges to see a clearer picture of the analysis.
                 </p>
 
                 <h4>Key Insights:</h4>
