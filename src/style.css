@@ -420,7 +420,7 @@ li {
     margin-bottom: 0.25rem;
   }
 
-  .prose-box p {
+  .prose-box p, a {
     margin-bottom: 1rem;
     font-size: 0.8rem;
   }
