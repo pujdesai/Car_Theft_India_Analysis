@@ -359,13 +359,13 @@ li {
 
 @media screen and (max-height: 925px) {
   .viz-header h2 {
-    font-size: 1.35rem;
+    font-size: 1.25rem;
     font-weight: bold;
     margin-bottom: 0.5rem;
   }
 
   .viz-header h3 {
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     color: #e53e3e;
   }
 
@@ -404,7 +404,7 @@ li {
   }
 
   .viz-explanation h4 {
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     font-weight: 600;
     margin-bottom: 1rem;
     color: #e53e3e;
@@ -422,6 +422,6 @@ li {
 
   .prose-box p {
     margin-bottom: 1rem;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
   }
 }
