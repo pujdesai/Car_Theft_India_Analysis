@@ -355,3 +355,9 @@ section {
 .footer p {
   color: #718096;
 }
+
+@media screen and (max-height: 925px) {
+  .viz-content {
+    filter: scale(0.5);
+  }
+}
