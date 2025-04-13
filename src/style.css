@@ -359,13 +359,13 @@ li {
 
 @media screen and (max-height: 925px) {
   .viz-header h2 {
-    font-size: 1.5rem;
+    font-size: 1.35rem;
     font-weight: bold;
     margin-bottom: 0.5rem;
   }
 
   .viz-header h3 {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     color: #e53e3e;
   }
 
@@ -373,7 +373,7 @@ li {
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 1500px;
+    max-width: 1400px;
     margin: 0;
     padding-bottom: 1.25rem;
     border-bottom: 1px solid #4a5568;
@@ -394,17 +394,17 @@ li {
 
   .viz-explanation p {
     color: #cbd5e0;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     line-height: 1.6;
   }
 
   .viz-explanation p,
   li {
-    font-size: 0.75rem;
+    font-size: 0.65rem;
   }
 
   .viz-explanation h4 {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     font-weight: 600;
     margin-bottom: 1rem;
     color: #e53e3e;
