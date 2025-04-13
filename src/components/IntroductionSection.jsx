@@ -34,7 +34,7 @@ const IntroductionSection = forwardRef((_props, ref) => {
                 We chose this dataset because it provides a detailed breakdown
                 of 10,000 car theft cases, including information on car brands,
                 theft locations, security measures, and recovery outcomes. To
-                analyze and visualize the data, we used Matplotlib, Plotly,
+                analyze and visualize the data, we used Plotly, 
                 Folium, D3, and Altair to create interactive charts and maps
                 that help identify the most stolen car brands, high-risk
                 locations, and factors that impact recovery rates. By exploring

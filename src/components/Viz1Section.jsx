@@ -17,62 +17,86 @@ const Viz1Section = forwardRef((_props, ref) => {
             <div className="viz-header">
               <h2>Visualization 1</h2>
               <h3>
-                Interactive Sankey Diagram Illustrating the Flow of Stolen{" "}
-                <br></br>
-                Vehicles Across Major Brands and Their Subsequent Recovery
-                Outcomes
+                Interactive Choropleth Map Showing the <br></br> Geographic
+                Distribution of Car Thefts and Recovery Outcomes Across 10
+                Indian States
               </h3>
             </div>
 
             <div className="viz-content">
               <div
                 style={{
-                  width: "825px",
+                  width: "800px",
                   height: "450px",
                   overflow: "hidden",
                   position: "relative",
                 }}
               >
                 <iframe
-                  src="/assets/sankey_diagram.html"
+                  src="/assets/choropleth.html"
                   style={{
                     width: "100%",
                     height: "100%",
                     border: "none",
-                    transform: "scale(1.15)",
-                    transformOrigin: "top center",
                   }}
                 />
+                <div
+                  style={{
+                    position: "absolute",
+                    bottom: "0px",
+                    left: "0px",
+                    backgroundColor: "white",
+                    border: "1px solid grey",
+                    padding: "5px",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    width: "100%",
+                    height: "50px",
+                  }}
+                >
+                  <div
+                    style={{
+                      width: "15px",
+                      height: "15px",
+                      backgroundColor: "gray",
+                      marginRight: "10px",
+                      opacity: 0.7,
+                      border: "1px solid black",
+                    }}
+                  ></div>
+                  <p style={{ fontSize: "10px", color: "black" }}>
+                    Missing Data
+                  </p>
+                </div>
               </div>
 
               <div className="viz-explanation">
                 <p>
-                  We designed an interactive Sankey diagram to show how 10,000
-                  stolen cars flowed through major brands and their recovery
-                  status. Line thickness represents volume, and hovering reveals
-                  exact numbers for easy exploration. Red and green colors
-                  highlight recovery outcomes, while the left-to-right layout
-                  makes it easy to compare patterns across brands.
+                  We designed this interactive choropleth map to show car theft
+                  volumes and recovery rates across Indian states. Darker blue
+                  shades indicate higher thefts, while hovering reveals exact
+                  values for each state. Missing data is shown in gray with a
+                  labeled legend for clarity. The design makes it easy to spot
+                  regional patterns while keeping the map clean and informative.
                 </p>
 
                 <h4>Key Insights:</h4>
                 <ul>
                   <li>
-                    Over two-thirds of stolen vehicles were not recovered,
-                    highlighting a significant gap in vehicle recovery efforts
-                    across all brands
+                    States like Gujarat, Maharashtra, and Rajasthan had some of
+                    the highest theft volumes, as shown by the darkest blue
+                    shades
                   </li>
                   <li>
-                    Recovery numbers are similar across brands, with each
-                    showing a majority of unrecovered vehicles, suggesting this
-                    is a broader issue rather than brand-specific
+                    Recovery rates remained relatively low and consistent across
+                    states, suggesting a widespread challenge in recovering
+                    stolen vehicles
                   </li>
                   <li>
-                    All brands experienced similar theft volumes, suggesting
-                    that no single brand was disproportionately targeted in this
-                    dataset. This likely reflects their overall popularity and
-                    widespread presence, making them equally accessible and
-                    appealing targets for theft
+                    Several states have missing data, which limits complete
+                    analysis and highlights the need for more comprehensive
+                    reporting across regions
                   </li>
                 </ul>
               </div>

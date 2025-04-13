@@ -17,86 +17,60 @@ const Viz4Section = forwardRef((_props, ref) => {
             <div className="viz-header">
               <h2>Visualization 4</h2>
               <h3>
-                Interactive Choropleth Map Showing the <br></br> Geographic
-                Distribution of Car Thefts and Recovery Outcomes Across 10
-                Indian States
+                Static Linechart Analyzing Daily <br></br>Theft Trends with a
+                30-Day Rolling Average to Reveal Patterns
               </h3>
             </div>
 
             <div className="viz-content">
               <div
                 style={{
-                  width: "800px",
-                  height: "450px",
+                  width: "825px",
+                  height: "425px",
                   overflow: "hidden",
                   position: "relative",
                 }}
               >
                 <iframe
-                  src="/assets/choropleth.html"
+                  src="/assets/linechart.html"
                   style={{
                     width: "100%",
                     height: "100%",
                     border: "none",
                   }}
                 />
-                <div
-                  style={{
-                    position: "absolute",
-                    bottom: "0px",
-                    left: "0px",
-                    backgroundColor: "white",
-                    border: "1px solid grey",
-                    padding: "5px",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    width: "100%",
-                    height: "50px",
-                  }}
-                >
-                  <div
-                    style={{
-                      width: "15px",
-                      height: "15px",
-                      backgroundColor: "gray",
-                      marginRight: "10px",
-                      opacity: 0.7,
-                      border: "1px solid black",
-                    }}
-                  ></div>
-                  <p style={{ fontSize: "10px", color: "black" }}>
-                    Missing Data
-                  </p>
-                </div>
               </div>
 
               <div className="viz-explanation">
                 <p>
-                  We designed this interactive choropleth map to show car theft
-                  volumes and recovery rates across Indian states. Darker blue
-                  shades indicate higher thefts, while hovering reveals exact
-                  values for each state. Missing data is shown in gray with a
-                  labeled legend for clarity. The design makes it easy to spot
-                  regional patterns while keeping the map clean and informative.
+                  For this visualization, we used a line chart to show daily car
+                  thefts in 2023, along with a 30-day rolling average to
+                  highlight overall trends. The yellow line captures daily
+                  fluctuations, while the red line smooths things out for a
+                  clearer big-picture view. This combo lets you see both
+                  short-term spikes and long-term patterns. The colors make it
+                  easy to focus on the trendline without losing sight of the raw
+                  data, and the full-year timeline helps spot seasonal changes
+                  in theft activity.
                 </p>
 
                 <h4>Key Insights:</h4>
                 <ul>
                   <li>
-                    States like Gujarat, Maharashtra, and Rajasthan had some of
-                    the highest theft volumes, as shown by the darkest blue
-                    shades
+                    There’s a noticeable peak in theft activity from mid-May to
+                    early June, as shown by the rolling average hitting its
+                    highest point
                   </li>
                   <li>
-                    Recovery rates remained relatively low and consistent across
-                    states, suggesting a widespread challenge in recovering
-                    stolen vehicles
+                    From mid-June through July, the average theft rate shows a
+                    steady decline, indicating a shift in trend during the
+                    summer
                   </li>
                   <li>
-                    Several states had missing data, which limits complete
-                    analysis and highlights the need for more comprehensive
-                    reporting across regions
+                    There’s a second smaller rise in thefts (following the
+                    decline from mid-June through July) during late August to
+                    mid-September, suggesting a possible secondary spike later
+                    in the year
                   </li>
                 </ul>
               </div>

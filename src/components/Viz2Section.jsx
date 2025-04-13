@@ -17,57 +17,60 @@ const Viz2Section = forwardRef((_props, ref) => {
             <div className="viz-header">
               <h2>Visualization 2</h2>
               <h3>
-                Static Linechart Analyzing Daily <br></br>Theft Trends with a
-                30-Day Rolling Average to Reveal Patterns
+                Interactive Sankey Diagram Illustrating the Flow of Stolen{" "}
+                <br></br>
+                Vehicles Across Major Brands and Their Subsequent Recovery
+                Outcomes
               </h3>
             </div>
 
             <div className="viz-content">
               <div
                 style={{
-                  width: "825px",
-                  height: "450px",
+                  width: "800px",
+                  height: "400px",
                   overflow: "hidden",
                   position: "relative",
                 }}
               >
-                <img
-                  src="/assets/linechart.jpg"
-                  alt="viz 2"
-                  className="viz-image"
+                <iframe
+                  src="/assets/stacked_barplot_diagram.html"
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    border: "none",
+                  }}
                 />
               </div>
 
               <div className="viz-explanation">
                 <p>
-                  For this visualization, we used a line chart to show daily car
-                  thefts in 2023, along with a 30-day rolling average to
-                  highlight overall trends. The yellow line captures daily
-                  fluctuations, while the red line smooths things out for a
-                  clearer big-picture view. This combo lets you see both
-                  short-term spikes and long-term patterns. The colors make it
-                  easy to focus on the trendline without losing sight of the raw
-                  data, and the full-year timeline helps spot seasonal changes
-                  in theft activity.
+                  We designed an interactive Sankey diagram to show how 10,000
+                  stolen cars flowed through major brands and their recovery
+                  status. Line thickness represents volume, and hovering reveals
+                  exact numbers for easy exploration. Red and green colors
+                  highlight recovery outcomes, while the left-to-right layout
+                  makes it easy to compare patterns across brands.
                 </p>
 
                 <h4>Key Insights:</h4>
                 <ul>
                   <li>
-                    There’s a noticeable peak in theft activity from mid-May to
-                    early June, as shown by the rolling average hitting its
-                    highest point
+                    Over two-thirds of stolen vehicles were not recovered,
+                    highlighting a significant gap in vehicle recovery efforts
+                    across all brands
                   </li>
                   <li>
-                    From mid-June through July, the average theft rate shows a
-                    steady decline, indicating a shift in trend during the
-                    summer
+                    Recovery numbers are similar across brands, with each
+                    showing a majority of unrecovered vehicles, suggesting this
+                    is a broader issue rather than brand-specific
                   </li>
                   <li>
-                    There’s a second smaller rise in thefts (following the
-                    decline from mid-June through July) during late August to
-                    mid-September, suggesting a possible secondary spike later
-                    in the year
+                    All brands experienced similar theft volumes, suggesting
+                    that no single brand was disproportionately targeted in this
+                    dataset. This likely reflects their overall popularity and
+                    widespread presence, making them equally accessible and
+                    appealing targets for theft
                   </li>
                 </ul>
               </div>
