@@ -601,4 +601,20 @@ li {
   .section-header p {
     font-size: 0.85rem;
   }
+
+  .takeaways-box {
+    margin-top: 1rem;
+    background-color: rgba(229, 62, 62, 0.1);
+    border: 1px solid #c53030;
+    border-radius: 0.5rem;
+    padding: 1rem;
+  }
+
+  .takeaways-box h3 {
+    font-size: 1.25rem;
+  }
+
+  .takeaways-list li {
+    margin-bottom: 0.5rem;
+  }
 }
