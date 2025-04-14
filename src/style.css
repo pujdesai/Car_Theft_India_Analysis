@@ -617,4 +617,11 @@ li {
   .takeaways-list li {
     margin-bottom: 0.5rem;
   }
+
+  .footer {
+    text-align: center;
+    padding-top: 1.5rem;
+    margin-top: 1.5rem;
+    border-top: none;
+  }
 }
