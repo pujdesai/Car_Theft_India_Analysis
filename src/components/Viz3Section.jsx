@@ -1,8 +1,20 @@
-import React, { forwardRef } from "react";
+import React, { forwardRef, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 const Viz3Section = forwardRef((_props, ref) => {
   const { AnimatePresence } = motion;
+
+  const [isShortScreen, setIsShortScreen] = useState(false);
+
+  useEffect(() => {
+    const checkHeight = () => {
+      setIsShortScreen(window.innerHeight < 711);
+    };
+
+    checkHeight();
+    window.addEventListener("resize", checkHeight);
+    return () => window.removeEventListener("resize", checkHeight);
+  }, []);
 
   return (
     <AnimatePresence>
@@ -23,33 +35,47 @@ const Viz3Section = forwardRef((_props, ref) => {
             </div>
 
             <div className="viz-content">
-              <div
-                style={{
-                  width: "850px",
-                  height: "415px",
-                  overflow: "hidden",
-                  position: "relative",
-                  background: "white",
-                }}
-              >
+              {isShortScreen ? (
+                <button
+                  className="explore-button"
+                  onClick={() =>
+                    window.open(
+                      "/assets/barchart.html",
+                      "_blank"
+                    )
+                  }
+                >
+                  Click here to view visualization
+                </button>
+              ) : (
                 <div
                   style={{
                     width: "850px",
                     height: "415px",
                     overflow: "hidden",
                     position: "relative",
+                    background: "white",
                   }}
                 >
-                  <iframe
-                    src="/assets/barchart.html"
+                  <div
                     style={{
-                      width: "100%",
-                      height: "100%",
-                      border: "none",
+                      width: "850px",
+                      height: "415px",
+                      overflow: "hidden",
+                      position: "relative",
                     }}
-                  />
+                  >
+                    <iframe
+                      src="/assets/barchart.html"
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        border: "none",
+                      }}
+                    />
+                  </div>
                 </div>
-              </div>
+              )}
 
               <div className="viz-explanation">
                 <p>

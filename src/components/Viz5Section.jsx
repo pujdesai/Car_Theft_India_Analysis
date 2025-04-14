@@ -1,8 +1,20 @@
-import React, { forwardRef } from "react";
+import React, { forwardRef, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 const Viz5Section = forwardRef((_props, ref) => {
   const { AnimatePresence } = motion;
+
+  const [isShortScreen, setIsShortScreen] = useState(false);
+
+  useEffect(() => {
+    const checkHeight = () => {
+      setIsShortScreen(window.innerHeight < 711);
+    };
+
+    checkHeight();
+    window.addEventListener("resize", checkHeight);
+    return () => window.removeEventListener("resize", checkHeight);
+  }, []);
 
   return (
     <AnimatePresence>
@@ -23,13 +35,22 @@ const Viz5Section = forwardRef((_props, ref) => {
             </div>
 
             <div className="viz-content">
-              <div className="viz-image-container">
-                <img
-                  src="/assets/heatmap.png"
-                  alt="viz 5"
-                  className="viz-image"
-                />
-              </div>
+              {isShortScreen ? (
+                <button
+                  className="explore-button"
+                  onClick={() => window.open("/assets/heatmap.png", "_blank")}
+                >
+                  Click here to view visualization
+                </button>
+              ) : (
+                <div className="viz-image-container">
+                  <img
+                    src="/assets/heatmap.png"
+                    alt="viz 5"
+                    className="viz-image"
+                  />
+                </div>
+              )}
 
               <div className="viz-explanation">
                 <p>

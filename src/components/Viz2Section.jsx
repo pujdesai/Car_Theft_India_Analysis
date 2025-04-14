@@ -1,8 +1,20 @@
-import React, { forwardRef } from "react";
+import React, { forwardRef, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 const Viz2Section = forwardRef((_props, ref) => {
   const { AnimatePresence } = motion;
+
+  const [isShortScreen, setIsShortScreen] = useState(false);
+
+  useEffect(() => {
+    const checkHeight = () => {
+      setIsShortScreen(window.innerHeight < 711);
+    };
+
+    checkHeight();
+    window.addEventListener("resize", checkHeight);
+    return () => window.removeEventListener("resize", checkHeight);
+  }, []);
 
   return (
     <AnimatePresence>
@@ -25,23 +37,34 @@ const Viz2Section = forwardRef((_props, ref) => {
             </div>
 
             <div className="viz-content">
-              <div
-                style={{
-                  width: "800px",
-                  height: "425px",
-                  overflow: "hidden",
-                  position: "relative",
-                }}
-              >
-                <iframe
-                  src="/assets/stacked_barplot_diagram.html"
+              {isShortScreen ? (
+                <button
+                  className="explore-button"
+                  onClick={() =>
+                    window.open("/assets/stacked_barplot_diagram.html", "_blank")
+                  }
+                >
+                  Click here to view visualization
+                </button>
+              ) : (
+                <div
                   style={{
-                    width: "100%",
-                    height: "100%",
-                    border: "none",
+                    width: "800px",
+                    height: "425px",
+                    overflow: "hidden",
+                    position: "relative",
                   }}
-                />
-              </div>
+                >
+                  <iframe
+                    src="/assets/stacked_barplot_diagram.html"
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      border: "none",
+                    }}
+                  />
+                </div>
+              )}
 
               <div className="viz-explanation">
                 <p>

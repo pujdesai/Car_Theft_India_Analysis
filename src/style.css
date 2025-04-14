@@ -520,3 +520,23 @@ li {
     font-size: 1rem;
   }
 }
+
+@media screen and (max-height: 711px) {
+  .prose-box p {
+    margin-bottom: 1rem;
+    font-size: 0.65rem;
+  }
+
+  .prose-box a {
+    margin-bottom: 1rem;
+    font-size: 0.65rem;
+  }
+
+  .section-header h2 {
+    font-size: 1.75rem;
+  }
+
+  .section-header p {
+    font-size: 0.75rem;
+  }
+}

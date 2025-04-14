@@ -1,8 +1,20 @@
-import React, { forwardRef } from "react";
+import React, { forwardRef, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 const Viz4Section = forwardRef((_props, ref) => {
   const { AnimatePresence } = motion;
+
+  const [isShortScreen, setIsShortScreen] = useState(false);
+
+  useEffect(() => {
+    const checkHeight = () => {
+      setIsShortScreen(window.innerHeight < 711);
+    };
+
+    checkHeight();
+    window.addEventListener("resize", checkHeight);
+    return () => window.removeEventListener("resize", checkHeight);
+  }, []);
 
   return (
     <AnimatePresence>
@@ -23,23 +35,32 @@ const Viz4Section = forwardRef((_props, ref) => {
             </div>
 
             <div className="viz-content">
-              <div
-                style={{
-                  width: "825px",
-                  height: "425px",
-                  overflow: "hidden",
-                  position: "relative",
-                }}
-              >
-                <iframe
-                  src="/assets/linechart.html"
+              {isShortScreen ? (
+                <button
+                  className="explore-button"
+                  onClick={() => window.open("/assets/linechart.html", "_blank")}
+                >
+                  Click here to view visualization
+                </button>
+              ) : (
+                <div
                   style={{
-                    width: "100%",
-                    height: "100%",
-                    border: "none",
+                    width: "825px",
+                    height: "425px",
+                    overflow: "hidden",
+                    position: "relative",
                   }}
-                />
-              </div>
+                >
+                  <iframe
+                    src="/assets/linechart.html"
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      border: "none",
+                    }}
+                  />
+                </div>
+              )}
 
               <div className="viz-explanation">
                 <p>

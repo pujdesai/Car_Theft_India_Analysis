@@ -1,8 +1,20 @@
-import React, { forwardRef } from "react";
+import React, { forwardRef, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 const Viz1Section = forwardRef((_props, ref) => {
   const { AnimatePresence } = motion;
+
+  const [isShortScreen, setIsShortScreen] = useState(false);
+
+  useEffect(() => {
+    const checkHeight = () => {
+      setIsShortScreen(window.innerHeight < 711);
+    };
+
+    checkHeight();
+    window.addEventListener("resize", checkHeight);
+    return () => window.removeEventListener("resize", checkHeight);
+  }, []);
 
   return (
     <AnimatePresence>
@@ -24,52 +36,63 @@ const Viz1Section = forwardRef((_props, ref) => {
             </div>
 
             <div className="viz-content">
-              <div
-                style={{
-                  width: "800px",
-                  height: "450px",
-                  overflow: "hidden",
-                  position: "relative",
-                }}
-              >
-                <iframe
-                  src="/assets/choropleth.html"
-                  style={{
-                    width: "100%",
-                    height: "100%",
-                    border: "none",
-                  }}
-                />
+              {isShortScreen ? (
+                <button
+                  className="explore-button"
+                  onClick={() =>
+                    window.open("/assets/choropleth.html", "_blank")
+                  }
+                >
+                  Click here to view visualization
+                </button>
+              ) : (
                 <div
                   style={{
-                    position: "absolute",
-                    bottom: "0px",
-                    left: "0px",
-                    backgroundColor: "white",
-                    border: "1px solid grey",
-                    padding: "5px",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    width: "100%",
-                    height: "50px",
+                    width: "800px",
+                    height: "450px",
+                    overflow: "hidden",
+                    position: "relative",
                   }}
                 >
+                  <iframe
+                    src="/assets/choropleth.html"
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      border: "none",
+                    }}
+                  />
                   <div
                     style={{
-                      width: "15px",
-                      height: "15px",
-                      backgroundColor: "gray",
-                      marginRight: "10px",
-                      opacity: 0.7,
-                      border: "1px solid black",
+                      position: "absolute",
+                      bottom: "0px",
+                      left: "0px",
+                      backgroundColor: "white",
+                      border: "1px solid grey",
+                      padding: "5px",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      width: "100%",
+                      height: "50px",
                     }}
-                  ></div>
-                  <p style={{ fontSize: "10px", color: "black" }}>
-                    Missing Data
-                  </p>
+                  >
+                    <div
+                      style={{
+                        width: "15px",
+                        height: "15px",
+                        backgroundColor: "gray",
+                        marginRight: "10px",
+                        opacity: 0.7,
+                        border: "1px solid black",
+                      }}
+                    ></div>
+                    <p style={{ fontSize: "10px", color: "black" }}>
+                      Missing Data
+                    </p>
+                  </div>
                 </div>
-              </div>
+              )}
 
               <div className="viz-explanation">
                 <p>
