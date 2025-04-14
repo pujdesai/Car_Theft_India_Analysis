@@ -441,9 +441,9 @@ li {
 
 @media screen and (max-height: 777px) {
   .viz-header h2 {
-    font-size: 1.15rem;
+    font-size: 1.1rem;
     font-weight: bold;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.25rem;
   }
 
   .viz-header h3 {
@@ -482,7 +482,7 @@ li {
 
   .viz-explanation p,
   li {
-    font-size: 0.6rem;
+    font-size: 0.55rem;
   }
 
   .viz-explanation h4 {
