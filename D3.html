@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Car Theft Heatmap</title>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 20px;
+      background: #f9f9f9;
+    }
+
+    h1 {
+      margin-bottom: 10px;
+    }
+
+    .axis text {
+      font-size: 12px;
+    }
+
+    .cell {
+      stroke: white;
+      stroke-width: 1px;
+    }
+
+    .tooltip {
+      position: absolute;
+      text-align: center;
+      padding: 6px;
+      font-size: 12px;
+      background: rgba(0, 0, 0, 0.7);
+      color: white;
+      border-radius: 3px;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>Car Theft Frequency by Car Type and Time of Day</h1>
+  <svg width="800" height="400"></svg>
+  <div class="tooltip" id="tooltip"></div>
+
+  <script>
+    const svg = d3.select("svg"),
+          margin = { top: 50, right: 150, bottom: 60, left: 120 },
+          width = +svg.attr("width") - margin.left - margin.right,
+          height = +svg.attr("height") - margin.top - margin.bottom,
+          g = svg.append("g").attr("transform", `translate(${margin.left},${margin.top})`);
+
+    const timeOfDayOrder = ["Morning", "Afternoon", "Evening", "Night"];
+
+    d3.csv("car_theft_india.csv").then(data => {
+      const counts = d3.rollup(
+        data,
+        v => v.length,
+        d => d.Car_Type,
+        d => d.Time_of_Theft
+      );
+
+      const carTypes = Array.from(counts.keys());
+      const times = timeOfDayOrder;
+
+      const flatData = [];
+      carTypes.forEach(carType => {
+        times.forEach(time => {
+          const count = counts.get(carType)?.get(time) || 0;
+          flatData.push({ carType, time, count });
+        });
+      });
+
+      const x = d3.scaleBand().domain(times).range([0, width]).padding(0.05);
+      const y = d3.scaleBand().domain(carTypes).range([0, height]).padding(0.05);
+
+      const minCount = d3.min(flatData, d => d.count);
+      const maxCount = d3.max(flatData, d => d.count);
+
+      const colorScale = d3.scaleSequential()
+        .interpolator(d3.interpolateOrRd)
+        .domain([minCount, maxCount])
+        .clamp(true);
+
+      g.append("g").call(d3.axisLeft(y));
+      g.append("g")
+        .attr("transform", `translate(0,${height})`)
+        .call(d3.axisBottom(x));
+
+      g.selectAll("rect")
+        .data(flatData)
+        .join("rect")
+        .attr("x", d => x(d.time))
+        .attr("y", d => y(d.carType))
+        .attr("width", x.bandwidth())
+        .attr("height", y.bandwidth())
+        .attr("fill", d => colorScale(d.count))
+        .attr("class", "cell");
+
+      // Gradient legend
+      const legendWidth = 120;
+      const legendHeight = 10;
+
+      const defs = d3.select("svg").append("defs");
+      const linearGradient = defs.append("linearGradient")
+        .attr("id", "gradient")
+        .attr("x1", "0%").attr("y1", "0%")
+        .attr("x2", "100%").attr("y2", "0%");
+
+      linearGradient.selectAll("stop")
+        .data(d3.range(0, 1.01, 0.1))
+        .join("stop")
+        .attr("offset", d => `${d * 100}%`)
+        .attr("stop-color", d => colorScale(minCount + d * (maxCount - minCount)));
+
+      const legend = d3.select("svg").append("g")
+        .attr("transform", `translate(${margin.left + width + 10},${margin.top})`);
+
+      const legendScale = d3.scaleLinear()
+        .domain([minCount, maxCount])
+        .range([0, legendWidth]);
+
+      const legendAxis = d3.axisBottom(legendScale)
+        .ticks(4)
+        .tickSize(legendHeight);
+
+      legend.append("rect")
+        .attr("width", legendWidth)
+        .attr("height", legendHeight)
+        .style("fill", "url(#gradient)");
+
+      legend.append("g")
+        .attr("transform", `translate(0,${legendHeight})`)
+        .call(legendAxis)
+        .select(".domain").remove();
+    });
+  </script>
+</body>
+</html>
